@@ -1,0 +1,134 @@
+-- Silent Assassins Hack
+-- Made by bautroibluelongblack_123 & Adono
+
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+local Window = Rayfield:CreateWindow({
+   Name = "Slient Assasin | ⚔️",
+   LoadingTitle = "Loading Script...",
+   LoadingSubtitle = "by bautroibluelongblack_123 & Adono",
+   ConfigurationSaving = {
+      Enabled = true,
+      FolderName = "SilentAssassinsConfig",
+      FileName = "MainConfig"
+   },
+   KeySystem = false
+})
+
+-- Chat Notification
+local function SendChat(msg)
+    local TextChatService = game:GetService("TextChatService")
+    if TextChatService.ChatVersion == Enum.ChatVersion.TextChatService then
+        local channel = TextChatService.TextChannels.RBXGeneral
+        if channel then
+            channel:SendAsync(msg)
+        end
+    else
+        local chatEvents = game:GetService("ReplicatedStorage"):FindFirstChild("DefaultChatSystemChatEvents")
+        if chatEvents and chatEvents:FindFirstChild("SayMessageRequest") then
+            chatEvents.SayMessageRequest:FireServer(msg, "All")
+        end
+    end
+end
+
+SendChat("Script by bautroibluelongblack_123 and Adono hahahaha")
+
+local MainTab = Window:CreateTab("Main", 4483362458)
+
+-- Variables for Toggles
+local ESP_Enabled = false
+local Hitbox_Large = false
+local Hitbox_Map = false
+
+-- ESP Logic
+local function CreateHighlight(player)
+    if player ~= game.Players.LocalPlayer then
+        local function Apply()
+            if not player.Character then return end
+            local highlight = player.Character:FindFirstChild("JanusESP") or Instance.new("Highlight")
+            highlight.Name = "JanusESP"
+            highlight.Parent = player.Character
+            highlight.FillColor = Color3.fromRGB(0, 255, 255)
+            highlight.OutlineColor = Color3.fromRGB(255, 255, 255)
+            highlight.FillTransparency = 0.5
+            highlight.OutlineTransparency = 0
+            highlight.Enabled = ESP_Enabled
+            highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+        end
+        Apply()
+        player.CharacterAdded:Connect(Apply)
+    end
+end
+
+-- Hitbox Logic Loop
+game:GetService("RunService").RenderStepped:Connect(function()
+    for _, v in pairs(game.Players:GetPlayers()) do
+        if v ~= game.Players.LocalPlayer and v.Character and v.Character:FindFirstChild("HumanoidRootPart") then
+            local hrp = v.Character.HumanoidRootPart
+            if Hitbox_Map then
+                hrp.Size = Vector3.new(1000, 1000, 1000)
+                hrp.Transparency = 0.8
+                hrp.CanCollide = false
+            elseif Hitbox_Large then
+                hrp.Size = Vector3.new(25, 25, 25)
+                hrp.Transparency = 0.7
+                hrp.CanCollide = false
+            else
+                hrp.Size = Vector3.new(2, 2, 1)
+                hrp.Transparency = 0
+                hrp.CanCollide = true
+            end
+        end
+    end
+end)
+
+MainTab:CreateToggle({
+   Name = "ESP Highlight",
+   CurrentValue = false,
+   Flag = "ESP_Flag",
+   Callback = function(Value)
+      ESP_Enabled = Value
+      for _, p in pairs(game.Players:GetPlayers()) do
+          if p.Character and p.Character:FindFirstChild("JanusESP") then
+              p.Character.JanusESP.Enabled = Value
+          elseif Value then
+              CreateHighlight(p)
+          end
+      end
+   end,
+})
+
+MainTab:CreateToggle({
+   Name = "Hitbox Chém Xa",
+   CurrentValue = false,
+   Flag = "Hitbox_Large",
+   Callback = function(Value)
+      Hitbox_Large = Value
+      if not Value then
+          Hitbox_Map = false
+      end
+   end,
+})
+
+MainTab:CreateToggle({
+   Name = "Hitbox To Cả Map",
+   CurrentValue = false,
+   Flag = "Hitbox_Map",
+   Callback = function(Value)
+      Hitbox_Map = Value
+   end,
+})
+
+-- Handle New Players
+game.Players.PlayerAdded:Connect(function(player)
+    if ESP_Enabled then
+        CreateHighlight(player)
+    end
+end)
+
+Rayfield:Notify({
+   Title = "Success",
+   Content = "Slient Assasin Script Loaded Successfully",
+   Duration = 5,
+   Image = 4483362458,
+})
