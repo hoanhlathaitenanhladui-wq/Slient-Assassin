@@ -1,134 +1,39 @@
--- Silent Assassins Hack
--- Made by bautroibluelongblack_123 & Adono
-
-local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
-
-local Window = Rayfield:CreateWindow({
-   Name = "Slient Assasin | ⚔️",
-   LoadingTitle = "Loading Script...",
-   LoadingSubtitle = "by bautroibluelongblack_123 & Adono",
-   ConfigurationSaving = {
-      Enabled = true,
-      FolderName = "SilentAssassinsConfig",
-      FileName = "MainConfig"
-   },
-   KeySystem = false
-})
-
--- Chat Notification
-local function SendChat(msg)
-    local TextChatService = game:GetService("TextChatService")
-    if TextChatService.ChatVersion == Enum.ChatVersion.TextChatService then
-        local channel = TextChatService.TextChannels.RBXGeneral
-        if channel then
-            channel:SendAsync(msg)
-        end
-    else
-        local chatEvents = game:GetService("ReplicatedStorage"):FindFirstChild("DefaultChatSystemChatEvents")
-        if chatEvents and chatEvents:FindFirstChild("SayMessageRequest") then
-            chatEvents.SayMessageRequest:FireServer(msg, "All")
-        end
-    end
+-- // Protected by Monsy Obfuscator
+local RUYTazMu4={"b26444c50697c2127bef794993224475a67dcd689b65c95ddb85d469eb0adb5122d028150bdbdb45a6c0531da24fda7b45f1f9d47499a3089dceb0d381d6ac724e403fb34ebdf74b6d7f0af58038de14f920cdc44228491de5cb434e074b0c752cb2a24a","54e1f95491c601f34b03fd3cd305eb87e1d0317e62140a0627b85738ffa322a3429790c5444d8ed4d4a91fd15eacbd5502973e20c95d53d5408c1a00928299c4022820d4d8ec32fed41e7857cc37b9ba72f4a860de3d750522baa5b625bbaea34274bc53","9de8d6baaf4f5b1d4e7df7a320fa61146360307154da4ec413474b7202a490012c16071d313d6c144109ebc822d62c2e6a897804e62e7936d262a57390b521208d57ce2725314334d7b1af7f92e968a06c511a020e8ec257bb06203fa744f11d086b6062","c66b5075df28f7f6decc43cdb70abac9b99bd8627f93ea3a53f595bb1e7ab90a3924ee9ae1066c2db1d12b91cad564d5f0310a2a3284eb8b68b321632cab680ab1ca2c4996b0b0a01a28d5f3683321a0987399140ffd0aa32376644f43e5010295ca7819","d35cebef97bdf5dfd0bc124b2a3f56548c820fbab6f1ad62ab58fc8643015987d16db28780e8250b635d077c9551cab6b25c05a3d783e84653410a1d13ca78b1fdbcfb3692f1d7c7b1d5bbc075d64e67fde1a8aba8602168418dd904076e31938f21e675","923e301dffee0ac21667c728390229110d389a814dce9d624339ca84d87da8cb5ccce71d5b1871009943a306616916a5ad842b91631fb2690705d07b6e403c44976c97556d18fa5c7740d71dc0fd42c780bbb2858d841c40676bd8eeeeb2b301206e9767","9d5a9e0c24855375c40d2889a6bad2c25df843452ad269bcf17c7bc6bda3dca72bc8d20074138b3e552e3b72a6db4546dfe8cf0a5320ebc570fd05180bfe0e6b1108a21fa856789c1eb599bbbfc269619184fc58a18fc0140337bea8d10e925ad6a9fc41","1d3edfc8dc05fbbada2480fb0e4ab578daaedb14997d2bb0f3eed88165dbc327a5d68ff3ea570142bc46304dabca6fb769136757956f6ec38cc1551c936cf25ee405a54c29a9bbef52bdbb5d49de436eaa5dc790dd0e0d101ce98402222a6864f96bc584","3b09ca7c20a425914ac9d6373728c3728f21a3abf3f7d56215998ed491f67551f92024f05c61a20c80dfac0b2b4a782299b23be9b394e851db8e1bc10fae8f48b00bf7e09b6668ec758299c59546ca83dc6f683a0bb41c3880941a2f98768d904cfd99ae","a299bd0463e95327d823a15a616ca6edbc37e96e3c7ab3bf9d2bea1bf6fdb31c16d3681a8c5f1d83ad4ccc033972df68adb9ce9322444dace79f1a840393146361cb9c1bdfdef2e20546ef918940091dcee2fed8c8aea062a41a4f3ae509b3babf0e26dc","50eb854af02499985cb90d3549fa4846087a9b6b91bdf359d331dd801e4a150422ca880cac66ca33034bbf6ed1bda1674894ec2c260bc35803ee66a316044381db2d69a8fbde59475d7d61b561ef871c8d9d29eba459ea5c1fbcc1d7b6abf44148180dc9","fd4fc3158d692dc2d8212d5722bbfc91694f1a3aeae10ab4688b645cc4ec9366f882da448a662696946d547ebbc9b6ddd842ea721b1be6acd7b7bb0dfca70e1975408ad4d79363e9d6d8065dbb81b2d8f688ac1480a970a39294a80278f975c0da1eab71","938ef742d7bd9b4e45fec012952996febb36ac7799e2be47be58e51854980e11dbfd27c552f7be7eacae97559c565bd9f9641f041b60ff62ff7a80450e2fdffc8627143a9028bebd9ddff227a00c5fddc39b402096d1f849abc1863b9f73ac08fdf100b5","9df5a46353c9ef719f855ed1b2cc3bb7816aa9b721418581074cd5f6fde1380792f7b8f141417ce7bc3e0a13466d70461a97bc4cc88906d8189342f696720626d85c1304510537889019d785512cbeeb9c4aa34159c8f5b6650665258c4763ba0cb1bd72","79c0956e9f0be0c8136904c1616cd272c2dc9458f451a59a96adfbcd0c24a76bff32bc483a86c79b921c99ce62b6794d0881c1189c49c1c87036dd63ce6724aabe8937d5f046cb11bc216d4161eab8c908bc01d8a3d5ab00016de0a00ea2961a6de767c9","2c4fda75f926f76efdfd949d223453a4e04f8fdadc64ebd0175cb8328dbeb079bb178755f1476ecea95cb9c3ffefdc51266596e26f7d6e420bfea4910e6280463a06bfebfaa505614290fa8a84be9e6e85064214386aba6eb4b6680208952f872afda53a","613dbfccd324695308c1fc6ef2eb5a5113349973b2cb2d8a64a28555d4100a10cee82c335fb4f13c8d05c03a42052ad4b564f9ffa0f4bdd36dca0761265197df617f772fd7bfbd05c8f14b1dda5ce0405ccaeb87527095271e8b82bd957ced50c6606f29","9b388b044fc1911c0713e11b777a0ea85bdf6a0dcaa7fcd49f1bdd532f6b6eabf3f4a34e2ce8430b4603d357dd2501e950b5b9415f4051a11a50e9a6c429b3f281d1be9103d5b978340a1675bcb3997bd79e72644294ba09f6435e51232bdba9bf68d562","709185e1b663c4580d68126ed328dbc941c1565ad80514518fb4a5b5c9a3b9d36e01830a274dc1145b33f7421ddfd56bd076d8279f00eab0f375a3aa80d7bcaa058bbd0243e8219825e6ffd213f831202caef5c4f0f91bb00efdeb2dde78db4e46eddf40","2db81eb0c7d1990302f86be55ac1d60db40d751afc2a2c806ed006124f3f6807ba276e7c0f47021a5cf4746e2ecf2154a4ec8914d435e2fd4eb63c88d0f2944143cf8b758f7d77b6b6fff662cf5a9c10341fac0b3d6f704b8df8d54ec5ce9c096d695314","0d21abb290b7681dbb35b41cfa6b89e34e2e44a81bb95e460a80f212f01471f9329a68f64c045f479d1653f32659ddd5b508fc07a799f4404da75f359897a2c4aa0277ae21f2fe5bbdccd6022640c5140f85fb00def8f5016cf7d6473b56ca5dfe93ca80","01700c12087a912ef7b845fe0375a8d200b9219a90cddf38e1aed9049d076eced7a1d5a06a401b4a658f8f51f928896ec2bdbc8062a192fdab2bc2b90b7263870cbb3c4708ffd85a376dab46422e616592b89ecb91c11381311943b01b041801baf7b39c","39c1bdb7a19bdc55d33caecfa370ec852cb3f5587320e9359c93feb5b52828d778d99753c946e41d0f7cfbecd4b9bdee09c25315ac448886d366ffb5d5b192e7d9df977e73541a062de5e680f31df751ff3ed612b538160ddc7c2290a1f8316e5aa4af53","3d2930fc33e177fc0cdf244b9d93b14c75b2ca3c5b475955d5e19e20ff5a0b48fb1e895015d7991699b8277177ebfe43a8103d55bc092bef879b7dc9e3c737c9d3c01b3c9f1399d595d2744dd8c77586e438e4d9bc2e4c875bf1348caa249c1aa405a547","bc3368c561b8b8e54ca49862be45f5e4d728636dc03899c9c1e01dd8b51bd95380360c82bcd6b4c0003e1400b64bf80efacac24480f7ab1e62ebbbf3795b52f42860b6735abb68ad3798b77cbf6ca5ad8713f773d7a5cd435dde12999d188414b085cd76","20bbbb0d4497fc069af4d105c8616ed4565a6c9910efc0912a2916319d0331f9c1699cde4da16069d60b6e3efaa876e60ff49c545020998808444247da77995473e63caa99b44354bc2a9b77f772a5da8dbbfaa1dd8dce04bc49898e77fda3f3e0de978d","b7c1b7109d558e5196fda3ce785a99e591c8d490ea1ca014e968fa6ebc88748505fec0743149ab21d967c3fb54dd52a2d43e434e7743c45202156836e1e5ef5a77894b38da446c1618e83b6ed2f32c0d0cd10ab7eb29ea14f27848ef4e3c3c03c940c927","96ae99e3c2094aecf819d704109abc80ba6904f54c040583d1bb3cf8b16c727eba465af1d7c71f6eb5ecb0b6cfda0aaed6050a06cf7c230e9d96a912c987ce3d3dc2a5ffd385248e9d04adfecd89bd536803edff8134fb85fdd6af95428dcf1b9b03f5b0","752a30a556ecf2b7bbfcb37cf01e22b08fc8a5ddcefb02881380ba41f084691a80b44d6ed2b0a06bebc8f34c27444ff5ebb32b70c220b93e67a99f62fdcaab9492022fc3f8b2fccb4259214814cc6614f62a62429bccd9d4c4f4de43748234f525e804ad","52ac2a6428960a91f0824ff165573c8042f8f709b3a2291ed41f1614da5cae80076d09c9ba92f2871b4f8d37bc720f0792ceaca48dc99885ce49d85c813163ed001306b111c80335844e1afc0a047780deef948780fbf520986c3fb0d56a6e2bb8ffd212","076c9af69007b3125b26d63ba4ffb001919b9d62550856b0e1484ac6daeadbb711a9a5acf249e616d30120d290572db117c2d862a7c1ebd59030fb6af399683769dfb0cbf0da87055b27770b07f625b56ea7b9e5e10b30f8873c03b5c0cd06c07240b348","9d4b4251a672cdce3f089004429352853782f2fcb2694ace8522298ed91cd05dbdc53ef9fb032bb536bf92eb608d9c0f07032bdd15e82dfa16ee79c96795c9ab7b4bce3ec03e6a800f0ebd720c95069fbc5c95fcde646ee5d7cde9b7915dd00df664cc1d","ef85781bd1f8e0ad678b214dbd0e165b15e14defb83f758c1e6c9557210189e44314776ed7bbf1a090404f27d34c0ab09260beb58483a0865f93d6449a59c33e28330f806cf7686b58d681a4f75ec5fcbc0b3bc50a69d8b74d05c748bf5147f9d2686e00","cf8ba9877949f96f1803293dc3e2993dc1feb3c9becfc6646d8ed3fe1f7a62b9b2bb138013959746260c48b0c36761b59bfdbd8d4dd3ea273c03d940d762364cc9a994a99dffd240eecac5515d716522fef19eaadc852ac9ff6ccfb0c67d7be64abb10a1","2ce99bb02482acb0ec213cc9362fafa18d25c747f4ea2ee541fa29ccc76d68cbebdcd247bc754bf7e6d767cc9da2b3c92b9b9ce53d4b80b0d91578c4fdd2ad01b1891aa1f21dccd31d3e9ce306ab06cf41c89c7c175152f394346880db18abab6ea0073d","9c4278b24e3bf7b59b3fa1acd2c6480e995994b0c9376ec9b6b021a4d9911d48bb824fe56120676e849e9f9b65decfc9750ad4f50f10653191a5049b3793d257111bc514137a44f614bb5c1aa58615cf690ad3d7f62e0b270ff072aad28b9a850a055e40","0f11072b7370938c46328c54ba01acb0972d76039bf8b09a8c8bba27d3905210f0ec3e80da7fa19aac95061bfd492ab0132677e1c41d7dc911c89757c8760ef1a5fa97f9815c3a9d45d15f74448491bee2214421c19bb4c5e1d7d28896ac8fb00d21ccd4","fdf1ba9dd8c88e10b5cd1bb0732375a5ceb69a80761484f8fe0bcaf12f3bdd1ba5c3eed45cef9c91bc4e98fece48c3e10efba7bac513d053335feaf8b4724403afb1a68c57a18377fc4b8c0035212bccada3bb8cc8c2d76f80c8f2b04a566ef0a65c9c86","672243575449d7bc96333ace03e3e8f457c21f66b7ae2bb0ece70eb39db93cb6b7d9ea12ff0d89f18ec9a7e669b251a654801d12"}
+local fyQjZiTA=table.concat(RUYTazMu4)
+local V8z1xxdTLlLota8={}
+for zlrTaI7M=1,#fyQjZiTA,2 do
+  V8z1xxdTLlLota8[#V8z1xxdTLlLota8+1]=tonumber(string.sub(fyQjZiTA,zlrTaI7M,zlrTaI7M+1),16)
 end
-
-SendChat("Script by bautroibluelongblack_123 and Adono hahahaha")
-
-local MainTab = Window:CreateTab("Main", 4483362458)
-
--- Variables for Toggles
-local ESP_Enabled = false
-local Hitbox_Large = false
-local Hitbox_Map = false
-
--- ESP Logic
-local function CreateHighlight(player)
-    if player ~= game.Players.LocalPlayer then
-        local function Apply()
-            if not player.Character then return end
-            local highlight = player.Character:FindFirstChild("JanusESP") or Instance.new("Highlight")
-            highlight.Name = "JanusESP"
-            highlight.Parent = player.Character
-            highlight.FillColor = Color3.fromRGB(0, 255, 255)
-            highlight.OutlineColor = Color3.fromRGB(255, 255, 255)
-            highlight.FillTransparency = 0.5
-            highlight.OutlineTransparency = 0
-            highlight.Enabled = ESP_Enabled
-            highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
-        end
-        Apply()
-        player.CharacterAdded:Connect(Apply)
-    end
+local ybnlws5LbbXbmrS={59,50,148,23,136,240,53,93,8,7,132,91,17,220,230,84}
+local axiunuvMHadZ={167,85,95,146,230,140,192,53,57,188,231,53,193,126,190,96}
+for zlrTaI7M=1,#V8z1xxdTLlLota8 do
+  V8z1xxdTLlLota8[zlrTaI7M]=bit32.bxor(V8z1xxdTLlLota8[zlrTaI7M],axiunuvMHadZ[(zlrTaI7M-1)%#axiunuvMHadZ+1])
 end
-
--- Hitbox Logic Loop
-game:GetService("RunService").RenderStepped:Connect(function()
-    for _, v in pairs(game.Players:GetPlayers()) do
-        if v ~= game.Players.LocalPlayer and v.Character and v.Character:FindFirstChild("HumanoidRootPart") then
-            local hrp = v.Character.HumanoidRootPart
-            if Hitbox_Map then
-                hrp.Size = Vector3.new(1000, 1000, 1000)
-                hrp.Transparency = 0.8
-                hrp.CanCollide = false
-            elseif Hitbox_Large then
-                hrp.Size = Vector3.new(25, 25, 25)
-                hrp.Transparency = 0.7
-                hrp.CanCollide = false
-            else
-                hrp.Size = Vector3.new(2, 2, 1)
-                hrp.Transparency = 0
-                hrp.CanCollide = true
-            end
-        end
-    end
-end)
-
-MainTab:CreateToggle({
-   Name = "ESP Highlight",
-   CurrentValue = false,
-   Flag = "ESP_Flag",
-   Callback = function(Value)
-      ESP_Enabled = Value
-      for _, p in pairs(game.Players:GetPlayers()) do
-          if p.Character and p.Character:FindFirstChild("JanusESP") then
-              p.Character.JanusESP.Enabled = Value
-          elseif Value then
-              CreateHighlight(p)
-          end
-      end
-   end,
-})
-
-MainTab:CreateToggle({
-   Name = "Hitbox Chém Xa",
-   CurrentValue = false,
-   Flag = "Hitbox_Large",
-   Callback = function(Value)
-      Hitbox_Large = Value
-      if not Value then
-          Hitbox_Map = false
-      end
-   end,
-})
-
-MainTab:CreateToggle({
-   Name = "Hitbox To Cả Map",
-   CurrentValue = false,
-   Flag = "Hitbox_Map",
-   Callback = function(Value)
-      Hitbox_Map = Value
-   end,
-})
-
--- Handle New Players
-game.Players.PlayerAdded:Connect(function(player)
-    if ESP_Enabled then
-        CreateHighlight(player)
-    end
-end)
-
-Rayfield:Notify({
-   Title = "Success",
-   Content = "Slient Assasin Script Loaded Successfully",
-   Duration = 5,
-   Image = 4483362458,
-})
+local sbw8DF5gKRwn=226975906
+local Ko0T_HDhLV5Tm={}
+local ndjz_AKubQwf=sbw8DF5gKRwn
+for QL2KGr=#V8z1xxdTLlLota8-1,1,-1 do
+  ndjz_AKubQwf=(ndjz_AKubQwf*1664525+1013904223)%4294967296
+  local ZG0QOZ=ndjz_AKubQwf%(QL2KGr+1)+1
+  Ko0T_HDhLV5Tm[#Ko0T_HDhLV5Tm+1]={QL2KGr+1,ZG0QOZ}
+end
+for zlrTaI7M=#Ko0T_HDhLV5Tm,1,-1 do
+  GbyNNj=Ko0T_HDhLV5Tm[zlrTaI7M]
+  local HqXnGvPiVl=V8z1xxdTLlLota8[GbyNNj[1]]
+  V8z1xxdTLlLota8[GbyNNj[1]]=V8z1xxdTLlLota8[GbyNNj[2]]
+  V8z1xxdTLlLota8[GbyNNj[2]]=HqXnGvPiVl
+end
+local tcflPrnUPYe0={}
+for zlrTaI7M=1,#V8z1xxdTLlLota8 do
+  tcflPrnUPYe0[zlrTaI7M]=string.char(bit32.bxor(V8z1xxdTLlLota8[zlrTaI7M],ybnlws5LbbXbmrS[(zlrTaI7M-1)%#ybnlws5LbbXbmrS+1]))
+end
+local bHD7NzI52jT=table.concat(tcflPrnUPYe0)
+if false then local KSpiaGB6=math.random() end
+local a5Q_gT2F=nil
+local c9nJ2D71vuct,TnX27YlG=loadstring(bHD7NzI52jT)
+if c9nJ2D71vuct then
+  c9nJ2D71vuct()
+else
+  error(" x01337 | // @ Monsy | Public Enemy : "..tostring(TnX27YlG))
+end
